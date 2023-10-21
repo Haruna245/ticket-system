@@ -36,7 +36,29 @@ if(isset($_POST['submit'])){
     <link href="./assets/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body style="height:100%">
-    
+<nav class="navbar navbar-expand navbar-dark bg-dark" aria-label="Second navbar example">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.php">SmartTicket</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample02" aria-controls="navbarsExample02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarsExample02">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="ViewEvents.php">Home</a>
+          </li>
+          
+        </ul>
+        
+      </div>
+    </div>
+  </nav>
+ 
+  
+  <div class="m-2">
+    <a href="ViewEvents.php" class="btn btn-primary" >Back</a>
+  </div>
 <?php 
     
     $sql = " SELECT * FROM event where EventID = '$EventID' ";
@@ -56,12 +78,12 @@ if(isset($_POST['submit'])){
         $Time = $row['Time'];
 
         echo '<div class=" d-flex align-items-center justify-content-center " style="height:50vh;width:100%">
-        <div class=" justify-content-center my-5 ">
+        <div class=" justify-content-center my-5" style="">
             <h5>Congratulation Ticket bought successfully</h5>
             <p>find below the details to the event and the ticket</p>
             <div class="">
             <div class="">
-            <div class="card shadow" style="width: 18rem;">
+            <div class="card shadow" style="width: 18rem; background-color: burlywood">
             <div class="card-body">
             <h5 class="card-title">Event Name: '.$EventName.'</h5>
             <h6 class="card-subtitle mb-2 text-body-secondary">Location: '.$Location.'</h6>

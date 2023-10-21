@@ -11,8 +11,8 @@ if(isset($_POST['submit'])){
     $price =    $_POST['price'];
     $time =  $_POST['eventTime'];
     
-    echo( $eventName);echo($eventLocation);
-    echo($date);echo($price);echo($time);
+    /* echo( $eventName);echo($eventLocation);
+    echo($date);echo($price);echo($time); */
     $sql = "INSERT INTO `event` (EventName, Location, EventDate, TicketPrice, Time)
             VALUES ('$eventName', '$eventLocation', '$date', '$price', '$time')";
     $result = mysqli_query($con,$sql);
@@ -42,6 +42,24 @@ if(isset($_POST['submit'])){
 </head>
 <body>
 
+<nav class="navbar navbar-expand navbar-dark bg-dark" aria-label="Second navbar example">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.php">SmartTicket</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample02" aria-controls="navbarsExample02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarsExample02">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="EventAdminPage.php">Home</a>
+          </li>
+          
+        </ul>
+        
+      </div>
+    </div>
+  </nav>
     <div class="container my-5">
         <h1>Add Events</h1>
     <form action="" method="post">

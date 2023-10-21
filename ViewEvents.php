@@ -22,17 +22,36 @@
 </head>
 <body>
     
+<nav class="navbar navbar-expand navbar-dark bg-dark" aria-label="Second navbar example">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.php">SmartTicket</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample02" aria-controls="navbarsExample02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
+      <div class="collapse navbar-collapse" id="navbarsExample02">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="ViewEvents.php">Home</a>
+          </li>
+          
+        </ul>
+        
+      </div>
+    </div>
+  </nav>
 
-
-    <h1>View All Events</h1>
+<div class="d-flex justify-content-center my-2">
+<h1>View All Events</h1>
+</div>
+    
 
 
     <div class="bd-example-snippet bd-code-snippet m-5"><div class="bd-example m-0 border-0">
         <table class="table table-striped">
           <thead>
           <tr>
-            <th scope="col">#</th>
+            <th scope="col"></th>
             <th scope="col">EventName</th>
             <th scope="col">Location</th>
             <th scope="col">EventDate</th>
@@ -50,10 +69,10 @@
  $result = mysqli_query($con,$sql);
 
  if ($result) {
-    echo "Data received successfully";
+    
 
     while ($row = mysqli_fetch_assoc($result)) {
-        echo $row['EventName'];
+        //echo $row['EventName'];
         $EventID = $row['EventID'];
         $EventName = $row['EventName'];
         $Location = $row['Location'];
@@ -63,7 +82,7 @@
 
         
         echo '<tr>
-        <th scope="row">1</th>
+        <th scope="row"></th>
         <td>' . $EventName . '</td>
         <td>' . $Location . '</td>
         <td>' . $EventDate . '</td>
@@ -76,7 +95,7 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
+            <h1 class="modal-title fs-5" id="staticBackdropLabel">fill in your details</h1>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
