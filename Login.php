@@ -43,7 +43,7 @@ if(isset($_POST['submit'])){
     <title>Login</title>
     <link href="./assets/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body>
+<body style="background-image: linear-gradient(-225deg, #E3FDF5 0%, #FFE6FA 100%);">
 
     
     <div>
@@ -51,17 +51,17 @@ if(isset($_POST['submit'])){
         <div class="d-flex justify-content-center align-items-center " style="height:70vh">
             
             
-            <div class="shadow w-30 rounded p-5">
+            <div class="shadow rounded p-5" style="width: 25%;background-color:white">
     
                 <form action="" method="post">
-                <div><h1>Login</h1></div>
+                <div class="d-flex justify-content-center mb-3"><h1>Login</h1></div>
                 <div>
                     <label for="email">email:</label>
                 <input type="text" class="form-control w-100" name="email"> 
                 <label for="password">password:</label> 
                 <input type="password" class="form-control" name="password"> <br>
                 <div class="w-100">
-                <input type="submit" value="submit" class="btn btn-primary mt-1 form-control" name="submit">
+                <input type="submit" value="Login" class="btn btn-primary mt-1 form-control" name="submit">
                 </div>
                 
                 </div>

@@ -56,9 +56,9 @@ if(isset($_POST['submit'])){
   </nav>
  
   
-  <div class="m-2">
+  <!-- <div class="m-2">
     <a href="ViewEvents.php" class="btn btn-primary" >Back</a>
-  </div>
+  </div> -->
 <?php 
     
     $sql = " SELECT * FROM event where EventID = '$EventID' ";
@@ -66,10 +66,10 @@ if(isset($_POST['submit'])){
  $result = mysqli_query($con,$sql);
 
  if ($result) {
-    //echo "Data received successfully";
+    
 
     while ($row = mysqli_fetch_assoc($result)) {
-       // echo $row['EventName'];
+       
         $EventID = $row['EventID'];
         $EventName = $row['EventName'];
         $Location = $row['Location'];
@@ -77,30 +77,53 @@ if(isset($_POST['submit'])){
         $TicketPrice = $row['TicketPrice'];
         $Time = $row['Time'];
 
-        echo '<div class=" d-flex align-items-center justify-content-center " style="height:50vh;width:100%">
-        <div class=" justify-content-center my-5" style="">
-            <h5>Congratulation Ticket bought successfully</h5>
-            <p>find below the details to the event and the ticket</p>
-            <div class="">
-            <div class="">
-            <div class="card shadow" style="width: 18rem; background-color: burlywood">
-            <div class="card-body">
-            <h5 class="card-title">Event Name: '.$EventName.'</h5>
-            <h6 class="card-subtitle mb-2 text-body-secondary">Location: '.$Location.'</h6>
-            <p class="card-text">EventDate: '.$EventDate.'</p>
-            <h6 class="card-subtitle mb-2 text-body-secondary">TicketPrice: Ghs'.$TicketPrice.'</h6>
-            <!-- <a href="#" class="card-link">Card link</a>
-            <a href="#" class="card-link">Another link</a> -->
-            </div>
-            </div>
-            </div>
+        echo '<div class="" >
+  <div style="height: 50dvh;" class="d-flex justify-content-center align-items-center">
+    <div class="w-50 text-center shadow">
+    <img src="./assets/images/icon-success.png" style="width: 100px;height:100px;margin-top:20px" alt="">
+    <div class="m-5">
+    <h5>Congratulations tickets bought successfully</h5>
+    <p>Below are the details to your ticket</p>
+
+    
+    <table class="table table-striped">
+          <thead>
+          <tr>
             
-            </div>
-        </div>
-        </div>';
+            <th scope="col">User</th>
+            <th scope="col">EventName</th>
+            <th scope="col">Location</th>
+            <th scope="col">EventDate</th>
+            <th scope="col">TicketPrice</th>
+            <th scope="col">Time</th>
+            
+          </tr>
+          <tr>
+            <td>Seidu</td>
+            <td>'.$EventName.'</td>
+            <td>'.$Location.'</td>
+            <td>'.$EventDate.'</td>
+            <td>Ghs'.$TicketPrice.'</td>
+            <td>'.$Time.'</td>
+          </tr>
+          </thead>
+          
+          
+
+    </table>
+    <a href="ViewEvents.php" class="btn btn-primary w-25">Done</a>
+    </div>
+  </div>
+    
+  </div>
+  
+  
+</div>';
 
     }
 }
+
+
     ?>
 
 <!-- <p>'.$EventName.'</p> 

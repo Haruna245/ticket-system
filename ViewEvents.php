@@ -102,7 +102,7 @@
 
           <form action="AddTicket.php" method="post">
 
-          Event ID: ' . $EventID . '
+          
           <input type="text" name="EventID" class="d-none" value='. $EventID .'>
           <div class="col-md-12">
             <label for="inputEmail4" class="form-label">Name</label>
